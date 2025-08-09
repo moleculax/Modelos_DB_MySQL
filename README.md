@@ -1,1 +1,1 @@
-Estructura inicial BdResturant
+Estructura inicial de diversos modelos en MySQL 
