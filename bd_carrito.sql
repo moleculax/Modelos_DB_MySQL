@@ -46,8 +46,12 @@ CREATE TABLE IF NOT EXISTS  productos (
     id_producto BIGINT PRIMARY KEY,
     nombre VARCHAR(150),
     descripcion TEXT,
+	imagen VARCHAR(255)NULL,
     precio DECIMAL(10,2),
-    stock INT
+    stock INT,
+	fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	estado char(1) DEFAULT 'A'
 );
 
 CREATE TABLE IF NOT EXISTS  carritos (
