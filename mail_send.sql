@@ -1,9 +1,9 @@
 
-create database sendMail;
-select * from mail_send;
+create database Mail;
+select * from mailSend;
 
 
-CREATE TABLE `mail_send` (
+CREATE TABLE `mailSend` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `cod_proceso` varchar(10) NOT NULL DEFAULT '' COMMENT 'Nombre del proceso en cuestion, ejemplo COBRO, CANCELACION',
   `email` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
@@ -17,7 +17,5 @@ CREATE TABLE `mail_send` (
   `origen` varchar(20) NOT NULL DEFAULT '' COMMENT 'Ej: CALL / ATC / ADMINISTRACION ',
   `revisado` int(1) unsigned NOT NULL DEFAULT 0 COMMENT '[ 0 / 1 ] 0=NO Revisado / 1=SI Revisado',
   PRIMARY KEY (`id`),
-  KEY `kfechahora_ing_estado` (`fecha_ing`,`hora_ing`,`estado`) USING BTREE,
-  KEY `kestado_fechahora_ing` (`estado`,`fecha_ing`,`hora_ing`) USING BTREE,
-  KEY `kestado_id` (`estado`,`id`) USING BTREE
+
 );
